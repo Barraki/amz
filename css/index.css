@@ -1993,9 +1993,9 @@ div.contacts {
 
 .tooltip_green {
 	top: -99px;
-	right: -65px;
-	width: 456px;
-	height: 220px;
+	right: -121px;
+	width: 400px;
+	height: 230px;
 	background-color: #86c03b;
 	position: relative;
 	justify-content: center;
@@ -2006,6 +2006,11 @@ div.contacts {
 	box-sizing: border-box;
 	border-radius: 10px
 }
+.fa-times {
+	position: absolute;
+	right: 10px;
+	top: 10px
+}
 .col-md-2 {
 	display: flex;
 	flex-direction: column;
@@ -2014,14 +2019,17 @@ div.contacts {
 
 .tooltip_green > h2 {
 	font-size: 30px !important;
-	margin-top: 10px;
+	margin-top: 25px;
 }
-
+a {
+	cursor: pointer
+}
 .extention {
 	padding: 10px 5px;
-	width: 422px;
-	height: 130px;
-	background-color: #fbfbfb;
+	width: 362px;
+	height: 123px;
+	background-image: url(../img/install-exst.png);
+	background-size: cover;
 	position: relative;
 	color: black;
 	display: flex;

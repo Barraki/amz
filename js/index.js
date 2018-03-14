@@ -6514,7 +6514,7 @@
 			this.parent = t, this._create()
 		}
 		o.prototype = new n, o.prototype._create = function () {
-			this.holder = document.createElement("ol"), this.holder.className = "flickity-page-dots", this.dots = [], this.on("tap", this.onTap), this.on("pointerDown", this.parent.childUIPointerDown.bind(this.parent))
+			this.holder = document.createElement("ol"), this.holder.className = "flickity-page-dots", this.dots = [], this.on("tap", this.onTap), this.on("pointerUp", this.parent.childUIPointerDown.bind(this.parent))
 		}, o.prototype.activate = function () {
 			this.setDots(), this.bindTap(this.holder), this.parent.element.appendChild(this.holder)
 		}, o.prototype.deactivate = function () {
@@ -6909,28 +6909,29 @@
 	})
 }]);
 
-$(document).ready(function() {
+$(document).ready(function () {
 	var windowHeight = $(window).height();
- 
-	$(document).on('scroll', function() {
-		$('.j-ext-prices').each(function() {
+	$(document).on('scroll', function () {
+		$('.j-ext-prices').each(function () {
 			var self = $(this),
-			height = self.offset().top + self.height()/2 - windowHeight/2;
+				height = self.offset().top + self.height() / 2 - windowHeight / 2;
 			if ($(document).scrollTop() >= height) {
 				$(".tooltip").fadeIn(1200); // Медленно выводим изображение
-			}
+			};
 		});
 	});
 });
+
+
 /*$(document).on('scroll', function () {
 		$(".tooltip").fadeIn(800); // Медленно выводим изображение
 	});
 });*/
 
 $(document).ready(function () { // Ждём загрузки страницы
-
 	$(".tooltip_close").click(function () { // Событие клика на затемненный фон	   
-		$(".tooltip").fadeOut(800); // Медленно убираем всплывающее окно
+		$(".tooltip").remove(); // Медленно убираем всплывающее окно
 	});
-
 });
+
+
